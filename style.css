@@ -129,6 +129,39 @@ body {
   z-index: 1;
   flex-shrink: 0;
   border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+}
+
+.profile-image::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, 
+    transparent 0%,
+    rgba(0, 184, 148, 0.1) 25%,
+    rgba(0, 184, 148, 0.2) 50%,
+    rgba(0, 184, 148, 0.1) 75%,
+    transparent 100%
+  );
+  border-radius: 50%;
+  z-index: -1;
+  animation: rotate 8s linear infinite;
+}
+
+.profile-image::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  background: linear-gradient(45deg, 
+    transparent 0%,
+    rgba(0, 184, 148, 0.05) 25%,
+    rgba(0, 184, 148, 0.1) 50%,
+    rgba(0, 184, 148, 0.05) 75%,
+    transparent 100%
+  );
+  border-radius: 50%;
+  z-index: -2;
+  animation: rotate 12s linear infinite reverse;
 }
 
 .profile-image img {
@@ -136,6 +169,9 @@ body {
   height: 100%;
   object-fit: cover;
   transition: opacity 0.2s ease;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
 }
 
 .profile-image:hover img {
@@ -316,6 +352,15 @@ footer p {
   .profile-image {
     width: 240px;
     height: 240px;
+    animation: float 5s ease-in-out infinite;
+  }
+
+  .profile-image::before {
+    animation: rotate 10s linear infinite;
+  }
+  
+  .profile-image::after {
+    animation: rotate 14s linear infinite reverse;
   }
 
   .description h1 {
@@ -374,6 +419,15 @@ footer p {
   .profile-image {
     width: 200px;
     height: 200px;
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .profile-image::before {
+    animation: rotate 12s linear infinite;
+  }
+  
+  .profile-image::after {
+    animation: rotate 16s linear infinite reverse;
   }
 
   .description h1 {
