@@ -8,11 +8,29 @@
   <meta name="theme-color" content="#FFFFFF">
   <meta name="robots" content="index, follow">
   <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: https://maps.googleapis.com; frame-src 'self' https://www.google.com;">
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
   <link rel="canonical" href="https://zuradiva-art.com">
   <title>Zuradiva Art – Balinese Artist</title>
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Zuradiva Art – Balinese Artist">
+  <meta property="og:description" content="Made Artawan – Balinese painter specializing in murals, paintings, and relief art.">
+  <meta property="og:image" content="https://zuradiva-art.com/assets/profile.png">
+  <meta property="og:url" content="https://zuradiva-art.com">
+  <meta property="og:type" content="website">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="mask-icon" href="assets/safari-pinned-tab.svg" color="#2a2a2a">
+  <meta name="msapplication-TileColor" content="#2a2a2a">
+  <meta name="theme-color" content="#ffffff">
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Italiana&family=Prata&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/profile.png">
 </head>
 <body class="index-page">
   <header class="hero">
@@ -49,35 +67,35 @@
     </div>
   </header>
 
-  <section class="portfolio">
-    <h2>Portfolio</h2>
+  <section class="artworks">
+    <h2>Artworks</h2>
     <div class="gallery">
       <div class="gallery-item" onclick="openLightbox(this.querySelector('img'))">
-        <img src="assets/art1.png" alt="Painting 1" loading="lazy" width="350" height="263">
+        <img src="assets/art1.png" alt="Painting 1" loading="lazy" width="350" height="263" decoding="async">
       </div>
       <div class="gallery-item" onclick="openLightbox(this.querySelector('img'))">
-        <img src="assets/art2.png" alt="Mural 1" loading="lazy" width="350" height="263">
+        <img src="assets/art2.png" alt="Mural 1" loading="lazy" width="350" height="263" decoding="async">
       </div>
       <div class="gallery-item" onclick="openLightbox(this.querySelector('img'))">
-        <img src="assets/art3.png" alt="Relief 1" loading="lazy" width="350" height="263">
+        <img src="assets/art3.png" alt="Relief 1" loading="lazy" width="350" height="263" decoding="async">
       </div>
       <div class="gallery-item" onclick="openLightbox(this.querySelector('img'))">
-        <img src="assets/art4.png" alt="Painting 2" loading="lazy" width="350" height="263">
+        <img src="assets/art4.png" alt="Painting 2" loading="lazy" width="350" height="263" decoding="async">
       </div>
       <div class="gallery-item" onclick="openLightbox(this.querySelector('img'))">
-        <img src="assets/art5.png" alt="Mural 2" loading="lazy" width="350" height="263">
+        <img src="assets/art5.png" alt="Mural 2" loading="lazy" width="350" height="263" decoding="async">
       </div>
       <div class="gallery-item" onclick="openLightbox(this.querySelector('img'))">
-        <img src="assets/art6.png" alt="Relief 2" loading="lazy" width="350" height="263">
+        <img src="assets/art6.png" alt="Relief 2" loading="lazy" width="350" height="263" decoding="async">
       </div>
       <div class="gallery-item" onclick="openLightbox(this.querySelector('img'))">
-        <img src="assets/art7.png" alt="Relief 3" loading="lazy" width="350" height="263">
+        <img src="assets/art7.png" alt="Relief 3" loading="lazy" width="350" height="263" decoding="async">
       </div>
       <div class="gallery-item" onclick="openLightbox(this.querySelector('img'))">
-        <img src="assets/art8.png" alt="Relief 3" loading="lazy" width="350" height="263">
+        <img src="assets/art8.png" alt="Relief 3" loading="lazy" width="350" height="263" decoding="async">
       </div>
       <div class="gallery-item" onclick="openLightbox(this.querySelector('img'))">
-        <img src="assets/art9.png" alt="Relief 3" loading="lazy" width="350" height="263">
+        <img src="assets/art9.png" alt="Relief 3" loading="lazy" width="350" height="263" decoding="async">
       </div>
     </div>
   </section>
@@ -87,14 +105,256 @@
     <span class="close-button" onclick="closeLightbox()">&times;</span>
     <button class="lightbox-nav prev" onclick="navigateImage(-1)">❮</button>
     <button class="lightbox-nav next" onclick="navigateImage(1)">❯</button>
-    <img id="lightbox-img" class="lightbox-content" src="" alt="Enlarged image">
+    <img id="lightbox-img" class="lightbox-content" src="" alt="Enlarged image" decoding="async">
+  </div>
+
+  <div class="map-container">
+    <a href="https://www.google.com/maps/place/Warung+Bu+Polih/@-8.4643517,115.3810245,17z" target="_blank" rel="noopener noreferrer">
+      <img src="assets/map-placeholder.jpg" alt="View on Google Maps" width="600" height="300" loading="lazy" decoding="async">
+    </a>
   </div>
 
   <footer>
     <p>&copy; 2025 Kadek Suradipa. All rights reserved.</p>
   </footer>
 
+  <a href="https://wa.me/6285739327141" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contact on WhatsApp">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+  </a>
+
+  <style>
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #25d366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 3px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    .whatsapp-float:hover {
+      background-color: #128C7E;
+      transform: scale(1.1);
+    }
+
+    /* Gallery Item Animations */
+    .gallery-item {
+      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      transform-origin: center;
+      will-change: transform, box-shadow;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .gallery-item img {
+      transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+      transform-origin: center;
+      will-change: transform;
+      backface-visibility: hidden;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Enhanced Lightbox Styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.95);
+      z-index: 2000;
+      opacity: 0;
+      transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      backdrop-filter: blur(8px);
+    }
+
+    .lightbox.active {
+      opacity: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-content {
+      max-width: 90%;
+      max-height: 90vh;
+      object-fit: contain;
+      transform: scale(0.95);
+      transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+      border-radius: 12px;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+      will-change: transform, opacity;
+      backface-visibility: hidden;
+    }
+
+    .lightbox.active .lightbox-content {
+      transform: scale(1);
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%) scale(0.9);
+      background: rgba(255, 255, 255, 0.15);
+      color: white;
+      border: none;
+      padding: 25px 20px;
+      cursor: pointer;
+      font-size: 28px;
+      border-radius: 50%;
+      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      opacity: 0.7;
+      backdrop-filter: blur(8px);
+      will-change: transform, opacity, background;
+    }
+
+    .lightbox-nav:hover {
+      background: rgba(255, 255, 255, 0.25);
+      opacity: 1;
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .lightbox-nav.prev {
+      left: 30px;
+    }
+
+    .lightbox-nav.next {
+      right: 30px;
+    }
+
+    .close-button {
+      position: absolute;
+      top: 25px;
+      right: 35px;
+      color: white;
+      font-size: 45px;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      opacity: 0.7;
+      transform-origin: center;
+      will-change: transform, opacity;
+    }
+
+    .close-button:hover {
+      opacity: 1;
+      transform: rotate(90deg) scale(1.1);
+    }
+
+    /* Loading Animation */
+    @keyframes pulse {
+      0% { opacity: 0.6; }
+      50% { opacity: 1; }
+      100% { opacity: 0.6; }
+    }
+
+    .lightbox-content.loading {
+      animation: pulse 1.5s infinite;
+    }
+
+    /* Typography Styles */
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+      font-size: 3.5rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      color: #1a1a1a;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+      font-size: 2.5rem;
+      letter-spacing: -0.01em;
+      margin-bottom: 2rem;
+      color: #1a1a1a;
+    }
+
+    .lead {
+      font-family: 'Italiana', serif;
+      font-size: 1.8rem;
+      line-height: 1.6;
+      font-weight: 400;
+      color: #2a2a2a;
+      margin-bottom: 2rem;
+      letter-spacing: 0.02em;
+      max-width: 800px;
+      text-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .lead::first-letter {
+      font-size: 2.2rem;
+      font-family: 'Prata', serif;
+      color: #1a1a1a;
+    }
+
+    .lead strong {
+      font-family: 'Prata', serif;
+      font-weight: 400;
+      color: #1a1a1a;
+      letter-spacing: 0.03em;
+    }
+
+    .nav-link {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+    }
+
+    /* Responsive Typography */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+
+      .lead {
+        font-size: 1.5rem;
+        line-height: 1.5;
+      }
+
+      .lead::first-letter {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+
   <script>
+    // Add error handling for image loading
+    document.querySelectorAll('img').forEach(img => {
+      img.addEventListener('error', function() {
+        this.src = 'assets/placeholder.png';
+        this.alt = 'Image not available';
+      });
+    });
+
+    // Existing lightbox code with error handling
     let currentImageIndex = 0;
     const galleryImages = document.querySelectorAll('.gallery-item img');
     const lightbox = document.getElementById('lightbox');
@@ -105,15 +365,27 @@
       
       try {
         lightbox.style.display = 'flex';
-        lightbox.classList.add('active');
+        lightboxImg.classList.add('loading');
+        
+        const tempImage = new Image();
+        tempImage.onload = () => {
+          requestAnimationFrame(() => {
+            lightbox.classList.add('active');
+            lightboxImg.classList.remove('loading');
+          });
+        };
+        tempImage.onerror = () => {
+          console.error('Error loading image:', img.src);
+          lightboxImg.classList.remove('loading');
+        };
+        tempImage.src = img.src;
+        
         lightboxImg.src = img.src;
         lightboxImg.alt = img.alt;
         
-        // Find the index of the clicked image
         currentImageIndex = Array.from(galleryImages).indexOf(img);
         updateNavigationButtons();
         
-        // Prevent body scroll
         document.body.style.overflow = 'hidden';
       } catch (error) {
         console.error('Error opening lightbox:', error);
@@ -125,9 +397,11 @@
       
       try {
         lightbox.classList.remove('active');
-        lightbox.style.display = 'none';
         
-        // Restore body scroll
+        setTimeout(() => {
+          lightbox.style.display = 'none';
+        }, 500);
+        
         document.body.style.overflow = '';
       } catch (error) {
         console.error('Error closing lightbox:', error);
@@ -138,15 +412,32 @@
       if (!galleryImages.length) return;
       
       try {
-        event.stopPropagation(); // Prevent lightbox from closing
-        currentImageIndex = (currentImageIndex + direction + galleryImages.length) % galleryImages.length;
-        const newImage = galleryImages[currentImageIndex];
+        event.stopPropagation();
         
-        if (newImage && lightboxImg) {
-          lightboxImg.src = newImage.src;
-          lightboxImg.alt = newImage.alt;
-          updateNavigationButtons();
-        }
+        lightboxImg.style.opacity = '0';
+        lightboxImg.style.transform = `scale(${direction === 1 ? 0.9 : 1.1})`;
+        
+        setTimeout(() => {
+          currentImageIndex = (currentImageIndex + direction + galleryImages.length) % galleryImages.length;
+          const newImage = galleryImages[currentImageIndex];
+          
+          if (newImage && lightboxImg) {
+            // Preload next image
+            const tempImage = new Image();
+            tempImage.onload = () => {
+              lightboxImg.src = newImage.src;
+              lightboxImg.alt = newImage.alt;
+              
+              requestAnimationFrame(() => {
+                lightboxImg.style.opacity = '1';
+                lightboxImg.style.transform = 'scale(1)';
+              });
+              
+              updateNavigationButtons();
+            };
+            tempImage.src = newImage.src;
+          }
+        }, 300);
       } catch (error) {
         console.error('Error navigating images:', error);
       }
@@ -157,7 +448,6 @@
       const nextButton = document.querySelector('.lightbox-nav.next');
       
       if (prevButton && nextButton) {
-        // Add fade effect to buttons when at start/end
         prevButton.style.opacity = currentImageIndex === 0 ? '0.5' : '1';
         nextButton.style.opacity = currentImageIndex === galleryImages.length - 1 ? '0.5' : '1';
       }
@@ -172,14 +462,6 @@
       } else if (event.key === 'ArrowRight') {
         navigateImage(1);
       }
-    });
-
-    // Handle image loading errors
-    galleryImages.forEach(img => {
-      img.addEventListener('error', function() {
-        this.src = 'assets/placeholder.png';
-        this.alt = 'Image not available';
-      });
     });
   </script>
 </body>
