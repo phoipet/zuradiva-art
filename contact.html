@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Made Artawan – Balinese painter specializing in murals, paintings, and relief art.">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme-color" content="#FFFFFF">
+  <meta name="robots" content="index, follow">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="canonical" href="https://zuradiva-art.com/contact">
+  <title>Contact – Zuradiva Art</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content">
+      <nav class="main-nav">
+        <div class="nav-inner">
+          <a href="index.html" class="nav-link">Home</a>
+          <!-- <a href="about.html" class="nav-link">About</a> -->
+          <a href="contact.html" class="nav-link active">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="contact-columns">
+    <div class="contact-col location">
+      <h2>LOCATION</h2>
+      <div class="location-details">
+        <div>
+          <p>Banjar Jungut Street, Tohpati, Kec. Banjarangkan,<br>
+          Kabupaten Klungkung, Bali 80752</p>
+        </div>
+      </div>
+      <div class="map-container contact-map">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126753.2820199946!2d115.393964!3d-8.557524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd1f9e2e2e2e2e3%3A0x7e2e2e2e2e2e2e2e!2sBanjar%20Jungut%20St%2C%20Tohpati%2C%20Kec.%20Banjarangkan%2C%20Kabupaten%20Klungkung%2C%20Bali%2080752%2C%20Indonesia!5e0!3m2!1sen!2sid!4v1710000000000!5m2!1sen!2sid" 
+          width="100%" 
+          height="260" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          sandbox="allow-scripts allow-same-origin allow-popups allow-forms">
+        </iframe>
+      </div>
+    </div>
+    <div class="contact-col contact-info">
+      <h2>CONTACT</h2>
+      <div class="contact-details">
+        <div class="contact-email">
+          <i class="fas fa-envelope"></i>
+          <a id="email" href="mailto:zuradivaart@gmail.com" style="color:inherit;text-decoration:none;">zuradivaart@gmail.com</a>
+        </div>
+        <div><i class="fab fa-instagram" style="margin-right:8px;"></i><a href="https://www.instagram.com/zuradiva_art/" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;">@zuradiva_art</a></div>
+        <div><i class="fab fa-whatsapp" style="margin-right:8px;"></i><a href="https://wa.me/6285739327141" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;">@wa.me/6285739327141</a></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Kadek Suradipa. All rights reserved.</p>
+  </footer>
+  <script>
+    function copyEmail(event) {
+      event.preventDefault();
+      const email = document.getElementById('email').textContent;
+      navigator.clipboard.writeText(email);
+    }
+  </script>
+</body>
+</html> 

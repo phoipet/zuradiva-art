@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Made Artawan – Balinese painter specializing in murals, paintings, and relief art.">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme-color" content="#FFFFFF">
+  <meta name="robots" content="index, follow">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="canonical" href="https://zuradiva-art.com">
+  <title>Zuradiva Art – Balinese Artist</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body class="index-page">
+  <header class="hero">
+    <div class="hero-content">
+      <nav class="main-nav">
+        <div class="nav-inner">
+          <a href="index.html" class="nav-link active">Home</a>
+          <!-- <a href="about.html" class="nav-link">About</a> -->
+          <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+      </nav>
+      <div class="profile">
+        <div class="profile-image">
+          <img src="assets/profile.png" alt="Made Artawan" loading="eager" width="280" height="280">
+        </div>
+        <div class="profile-info">
+          <div class="description">
+            <h1>Zuradiva Art</h1>
+            <p class="lead">Paintings, murals, and reliefs. Discover a fusion of tradition and modern expression by a Balinese artist. Each piece tells a story—crafted with soul, rooted in culture, and designed to elevate any space.</p>
+            <div class="social-links">
+              <a href="https://www.instagram.com/zuradiva_art/" target="_blank" class="social-link">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="mailto:your-email@example.com" class="social-link">
+                <i class="fas fa-envelope"></i>
+              </a>
+              <a href="https://wa.me/6285739327141" target="_blank" class="social-link">
+                <i class="fab fa-whatsapp"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="portfolio">
+    <h2>Portfolio</h2>
+    <div class="gallery">
+      <div class="gallery-item" onclick="openLightbox(this.querySelector('img'))">
+        <img src="assets/art1.png" alt="Painting 1" loading="lazy" width="350" height="263">
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this.querySelector('img'))">
+        <img src="assets/art2.png" alt="Mural 1" loading="lazy" width="350" height="263">
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this.querySelector('img'))">
+        <img src="assets/art3.png" alt="Relief 1" loading="lazy" width="350" height="263">
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this.querySelector('img'))">
+        <img src="assets/art4.png" alt="Painting 2" loading="lazy" width="350" height="263">
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this.querySelector('img'))">
+        <img src="assets/art5.png" alt="Mural 2" loading="lazy" width="350" height="263">
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this.querySelector('img'))">
+        <img src="assets/art6.png" alt="Relief 2" loading="lazy" width="350" height="263">
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this.querySelector('img'))">
+        <img src="assets/art7.png" alt="Relief 3" loading="lazy" width="350" height="263">
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this.querySelector('img'))">
+        <img src="assets/art8.png" alt="Relief 3" loading="lazy" width="350" height="263">
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this.querySelector('img'))">
+        <img src="assets/art9.png" alt="Relief 3" loading="lazy" width="350" height="263">
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Container -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="close-button" onclick="closeLightbox()">&times;</span>
+    <button class="lightbox-nav prev" onclick="navigateImage(-1)">❮</button>
+    <button class="lightbox-nav next" onclick="navigateImage(1)">❯</button>
+    <img id="lightbox-img" class="lightbox-content" src="" alt="Enlarged image">
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Kadek Suradipa. All rights reserved.</p>
+  </footer>
+
+  <script>
+    let currentImageIndex = 0;
+    const galleryImages = document.querySelectorAll('.gallery-item img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    function openLightbox(img) {
+      if (!img || !lightbox || !lightboxImg) return;
+      
+      try {
+        lightbox.style.display = 'flex';
+        lightbox.classList.add('active');
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        
+        // Find the index of the clicked image
+        currentImageIndex = Array.from(galleryImages).indexOf(img);
+        updateNavigationButtons();
+        
+        // Prevent body scroll
+        document.body.style.overflow = 'hidden';
+      } catch (error) {
+        console.error('Error opening lightbox:', error);
+      }
+    }
+
+    function closeLightbox() {
+      if (!lightbox) return;
+      
+      try {
+        lightbox.classList.remove('active');
+        lightbox.style.display = 'none';
+        
+        // Restore body scroll
+        document.body.style.overflow = '';
+      } catch (error) {
+        console.error('Error closing lightbox:', error);
+      }
+    }
+
+    function navigateImage(direction) {
+      if (!galleryImages.length) return;
+      
+      try {
+        event.stopPropagation(); // Prevent lightbox from closing
+        currentImageIndex = (currentImageIndex + direction + galleryImages.length) % galleryImages.length;
+        const newImage = galleryImages[currentImageIndex];
+        
+        if (newImage && lightboxImg) {
+          lightboxImg.src = newImage.src;
+          lightboxImg.alt = newImage.alt;
+          updateNavigationButtons();
+        }
+      } catch (error) {
+        console.error('Error navigating images:', error);
+      }
+    }
+
+    function updateNavigationButtons() {
+      const prevButton = document.querySelector('.lightbox-nav.prev');
+      const nextButton = document.querySelector('.lightbox-nav.next');
+      
+      if (prevButton && nextButton) {
+        // Add fade effect to buttons when at start/end
+        prevButton.style.opacity = currentImageIndex === 0 ? '0.5' : '1';
+        nextButton.style.opacity = currentImageIndex === galleryImages.length - 1 ? '0.5' : '1';
+      }
+    }
+
+    // Close lightbox when pressing Escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeLightbox();
+      } else if (event.key === 'ArrowLeft') {
+        navigateImage(-1);
+      } else if (event.key === 'ArrowRight') {
+        navigateImage(1);
+      }
+    });
+
+    // Handle image loading errors
+    galleryImages.forEach(img => {
+      img.addEventListener('error', function() {
+        this.src = 'assets/placeholder.png';
+        this.alt = 'Image not available';
+      });
+    });
+  </script>
+</body>
+</html>
