@@ -12,10 +12,14 @@
   <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
   <link rel="canonical" href="https://zuradiva-art.com">
   <title>Zuradiva Art – Balinese Artist</title>
+  <!-- Preload critical assets -->
+  <link rel="preload" as="image" href="assets/optimized/profile.webp" type="image/webp">
+  <link rel="preload" as="image" href="assets/optimized/profile.jpg" type="image/jpeg">
+  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/playfairdisplay/v30/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKdFvXDXbtM.woff2" crossorigin>
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Zuradiva Art – Balinese Artist">
   <meta property="og:description" content="Made Artawan – Balinese painter specializing in murals, paintings, and relief art.">
-  <meta property="og:image" content="https://zuradiva-art.com/assets/profile.png">
+  <meta property="og:image" content="https://zuradiva-art.com/assets/optimized/profile.webp">
   <meta property="og:url" content="https://zuradiva-art.com">
   <meta property="og:type" content="website">
   <!-- Favicon -->
@@ -30,7 +34,8 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Italiana&family=Prata&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="assets/profile.png">
+  <!-- Performance Script -->
+  <script src="performance.js" defer></script>
 </head>
 <body class="index-page">
   <header class="hero">
@@ -44,7 +49,12 @@
       </nav>
       <div class="profile">
         <div class="profile-image">
-          <img src="assets/profile.png" alt="Made Artawan" loading="eager" width="280" height="280">
+          <picture>
+            <source srcset="assets/optimized/profile.webp" type="image/webp">
+            <source srcset="assets/optimized/profile.avif" type="image/avif">
+            <source srcset="assets/optimized/profile.jpg" type="image/jpeg">
+            <img src="assets/optimized/profile.jpg" alt="Made Artawan" loading="eager" width="280" height="280">
+          </picture>
         </div>
         <div class="profile-info">
           <div class="description">
@@ -70,38 +80,182 @@
   <section class="artworks">
     <h2>Artworks</h2>
     <div class="gallery">
-      <div class="gallery-item" onclick="openLightbox(this.querySelector('img'))">
-        <img src="assets/art1.png" alt="Painting 1" loading="lazy" width="350" height="263" decoding="async">
+      <div class="gallery-item">
+        <picture>
+          <source srcset="assets/optimized/art1-small.webp" media="(max-width: 400px)" type="image/webp">
+          <source srcset="assets/optimized/art1-medium.webp" media="(max-width: 800px)" type="image/webp">
+          <source srcset="assets/optimized/art1.webp" type="image/webp">
+          <source srcset="assets/optimized/art1-small.avif" media="(max-width: 400px)" type="image/avif">
+          <source srcset="assets/optimized/art1-medium.avif" media="(max-width: 800px)" type="image/avif">
+          <source srcset="assets/optimized/art1.avif" type="image/avif">
+          <source srcset="assets/optimized/art1-small.jpg" media="(max-width: 400px)" type="image/jpeg">
+          <source srcset="assets/optimized/art1-medium.jpg" media="(max-width: 800px)" type="image/jpeg">
+          <img src="assets/optimized/art1-thumb.jpg" 
+               data-src="assets/optimized/art1.jpg"
+               alt="Painting 1" 
+               loading="lazy" 
+               width="350" 
+               height="263" 
+               decoding="async">
+        </picture>
       </div>
-      <div class="gallery-item" onclick="openLightbox(this.querySelector('img'))">
-        <img src="assets/art2.png" alt="Mural 1" loading="lazy" width="350" height="263" decoding="async">
+      <div class="gallery-item">
+        <picture>
+          <source srcset="assets/optimized/art2-small.webp" media="(max-width: 400px)" type="image/webp">
+          <source srcset="assets/optimized/art2-medium.webp" media="(max-width: 800px)" type="image/webp">
+          <source srcset="assets/optimized/art2.webp" type="image/webp">
+          <source srcset="assets/optimized/art2-small.avif" media="(max-width: 400px)" type="image/avif">
+          <source srcset="assets/optimized/art2-medium.avif" media="(max-width: 800px)" type="image/avif">
+          <source srcset="assets/optimized/art2.avif" type="image/avif">
+          <source srcset="assets/optimized/art2-small.jpg" media="(max-width: 400px)" type="image/jpeg">
+          <source srcset="assets/optimized/art2-medium.jpg" media="(max-width: 800px)" type="image/jpeg">
+          <img src="assets/optimized/art2-thumb.jpg" 
+               data-src="assets/optimized/art2.jpg"
+               alt="Painting 2" 
+               loading="lazy" 
+               width="350" 
+               height="263" 
+               decoding="async">
+        </picture>
       </div>
-      <div class="gallery-item" onclick="openLightbox(this.querySelector('img'))">
-        <img src="assets/art3.png" alt="Relief 1" loading="lazy" width="350" height="263" decoding="async">
+      <div class="gallery-item">
+        <picture>
+          <source srcset="assets/optimized/art3-small.webp" media="(max-width: 400px)" type="image/webp">
+          <source srcset="assets/optimized/art3-medium.webp" media="(max-width: 800px)" type="image/webp">
+          <source srcset="assets/optimized/art3.webp" type="image/webp">
+          <source srcset="assets/optimized/art3-small.avif" media="(max-width: 400px)" type="image/avif">
+          <source srcset="assets/optimized/art3-medium.avif" media="(max-width: 800px)" type="image/avif">
+          <source srcset="assets/optimized/art3.avif" type="image/avif">
+          <source srcset="assets/optimized/art3-small.jpg" media="(max-width: 400px)" type="image/jpeg">
+          <source srcset="assets/optimized/art3-medium.jpg" media="(max-width: 800px)" type="image/jpeg">
+          <img src="assets/optimized/art3-thumb.jpg" 
+               data-src="assets/optimized/art3.jpg"
+               alt="Painting 3" 
+               loading="lazy" 
+               width="350" 
+               height="263" 
+               decoding="async">
+        </picture>
       </div>
-      <div class="gallery-item" onclick="openLightbox(this.querySelector('img'))">
-        <img src="assets/art4.png" alt="Painting 2" loading="lazy" width="350" height="263" decoding="async">
+      <div class="gallery-item">
+        <picture>
+          <source srcset="assets/optimized/art4-small.webp" media="(max-width: 400px)" type="image/webp">
+          <source srcset="assets/optimized/art4-medium.webp" media="(max-width: 800px)" type="image/webp">
+          <source srcset="assets/optimized/art4.webp" type="image/webp">
+          <source srcset="assets/optimized/art4-small.avif" media="(max-width: 400px)" type="image/avif">
+          <source srcset="assets/optimized/art4-medium.avif" media="(max-width: 800px)" type="image/avif">
+          <source srcset="assets/optimized/art4.avif" type="image/avif">
+          <source srcset="assets/optimized/art4-small.jpg" media="(max-width: 400px)" type="image/jpeg">
+          <source srcset="assets/optimized/art4-medium.jpg" media="(max-width: 800px)" type="image/jpeg">
+          <img src="assets/optimized/art4-thumb.jpg" 
+               data-src="assets/optimized/art4.jpg"
+               alt="Painting 4" 
+               loading="lazy" 
+               width="350" 
+               height="263" 
+               decoding="async">
+        </picture>
       </div>
-      <div class="gallery-item" onclick="openLightbox(this.querySelector('img'))">
-        <img src="assets/art5.png" alt="Mural 2" loading="lazy" width="350" height="263" decoding="async">
+      <div class="gallery-item">
+        <picture>
+          <source srcset="assets/optimized/art5-small.webp" media="(max-width: 400px)" type="image/webp">
+          <source srcset="assets/optimized/art5-medium.webp" media="(max-width: 800px)" type="image/webp">
+          <source srcset="assets/optimized/art5.webp" type="image/webp">
+          <source srcset="assets/optimized/art5-small.avif" media="(max-width: 400px)" type="image/avif">
+          <source srcset="assets/optimized/art5-medium.avif" media="(max-width: 800px)" type="image/avif">
+          <source srcset="assets/optimized/art5.avif" type="image/avif">
+          <source srcset="assets/optimized/art5-small.jpg" media="(max-width: 400px)" type="image/jpeg">
+          <source srcset="assets/optimized/art5-medium.jpg" media="(max-width: 800px)" type="image/jpeg">
+          <img src="assets/optimized/art5-thumb.jpg" 
+               data-src="assets/optimized/art5.jpg"
+               alt="Painting 5" 
+               loading="lazy" 
+               width="350" 
+               height="263" 
+               decoding="async">
+        </picture>
       </div>
-      <div class="gallery-item" onclick="openLightbox(this.querySelector('img'))">
-        <img src="assets/art6.png" alt="Relief 2" loading="lazy" width="350" height="263" decoding="async">
+      <div class="gallery-item">
+        <picture>
+          <source srcset="assets/optimized/art6-small.webp" media="(max-width: 400px)" type="image/webp">
+          <source srcset="assets/optimized/art6-medium.webp" media="(max-width: 800px)" type="image/webp">
+          <source srcset="assets/optimized/art6.webp" type="image/webp">
+          <source srcset="assets/optimized/art6-small.avif" media="(max-width: 400px)" type="image/avif">
+          <source srcset="assets/optimized/art6-medium.avif" media="(max-width: 800px)" type="image/avif">
+          <source srcset="assets/optimized/art6.avif" type="image/avif">
+          <source srcset="assets/optimized/art6-small.jpg" media="(max-width: 400px)" type="image/jpeg">
+          <source srcset="assets/optimized/art6-medium.jpg" media="(max-width: 800px)" type="image/jpeg">
+          <img src="assets/optimized/art6-thumb.jpg" 
+               data-src="assets/optimized/art6.jpg"
+               alt="Painting 6" 
+               loading="lazy" 
+               width="350" 
+               height="263" 
+               decoding="async">
+        </picture>
       </div>
-      <div class="gallery-item" onclick="openLightbox(this.querySelector('img'))">
-        <img src="assets/art7.png" alt="Relief 3" loading="lazy" width="350" height="263" decoding="async">
+      <div class="gallery-item">
+        <picture>
+          <source srcset="assets/optimized/art7-small.webp" media="(max-width: 400px)" type="image/webp">
+          <source srcset="assets/optimized/art7-medium.webp" media="(max-width: 800px)" type="image/webp">
+          <source srcset="assets/optimized/art7.webp" type="image/webp">
+          <source srcset="assets/optimized/art7-small.avif" media="(max-width: 400px)" type="image/avif">
+          <source srcset="assets/optimized/art7-medium.avif" media="(max-width: 800px)" type="image/avif">
+          <source srcset="assets/optimized/art7.avif" type="image/avif">
+          <source srcset="assets/optimized/art7-small.jpg" media="(max-width: 400px)" type="image/jpeg">
+          <source srcset="assets/optimized/art7-medium.jpg" media="(max-width: 800px)" type="image/jpeg">
+          <img src="assets/optimized/art7-thumb.jpg" 
+               data-src="assets/optimized/art7.jpg"
+               alt="Painting 7" 
+               loading="lazy" 
+               width="350" 
+               height="263" 
+               decoding="async">
+        </picture>
       </div>
-      <div class="gallery-item" onclick="openLightbox(this.querySelector('img'))">
-        <img src="assets/art8.png" alt="Relief 3" loading="lazy" width="350" height="263" decoding="async">
+      <div class="gallery-item">
+        <picture>
+          <source srcset="assets/optimized/art8-small.webp" media="(max-width: 400px)" type="image/webp">
+          <source srcset="assets/optimized/art8-medium.webp" media="(max-width: 800px)" type="image/webp">
+          <source srcset="assets/optimized/art8.webp" type="image/webp">
+          <source srcset="assets/optimized/art8-small.avif" media="(max-width: 400px)" type="image/avif">
+          <source srcset="assets/optimized/art8-medium.avif" media="(max-width: 800px)" type="image/avif">
+          <source srcset="assets/optimized/art8.avif" type="image/avif">
+          <source srcset="assets/optimized/art8-small.jpg" media="(max-width: 400px)" type="image/jpeg">
+          <source srcset="assets/optimized/art8-medium.jpg" media="(max-width: 800px)" type="image/jpeg">
+          <img src="assets/optimized/art8-thumb.jpg" 
+               data-src="assets/optimized/art8.jpg"
+               alt="Painting 8" 
+               loading="lazy" 
+               width="350" 
+               height="263" 
+               decoding="async">
+        </picture>
       </div>
-      <div class="gallery-item" onclick="openLightbox(this.querySelector('img'))">
-        <img src="assets/art9.png" alt="Relief 3" loading="lazy" width="350" height="263" decoding="async">
+      <div class="gallery-item">
+        <picture>
+          <source srcset="assets/optimized/art9-small.webp" media="(max-width: 400px)" type="image/webp">
+          <source srcset="assets/optimized/art9-medium.webp" media="(max-width: 800px)" type="image/webp">
+          <source srcset="assets/optimized/art9.webp" type="image/webp">
+          <source srcset="assets/optimized/art9-small.avif" media="(max-width: 400px)" type="image/avif">
+          <source srcset="assets/optimized/art9-medium.avif" media="(max-width: 800px)" type="image/avif">
+          <source srcset="assets/optimized/art9.avif" type="image/avif">
+          <source srcset="assets/optimized/art9-small.jpg" media="(max-width: 400px)" type="image/jpeg">
+          <source srcset="assets/optimized/art9-medium.jpg" media="(max-width: 800px)" type="image/jpeg">
+          <img src="assets/optimized/art9-thumb.jpg" 
+               data-src="assets/optimized/art9.jpg"
+               alt="Painting 9" 
+               loading="lazy" 
+               width="350" 
+               height="263" 
+               decoding="async">
+        </picture>
       </div>
     </div>
   </section>
 
   <!-- Lightbox Container -->
-  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <div id="lightbox" class="lightbox">
     <span class="close-button" onclick="closeLightbox()">&times;</span>
     <button class="lightbox-nav prev" onclick="navigateImage(-1)">❮</button>
     <button class="lightbox-nav next" onclick="navigateImage(1)">❯</button>
@@ -202,11 +356,12 @@
       max-height: 90vh;
       object-fit: contain;
       transform: scale(0.95);
-      transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       border-radius: 12px;
       box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
       will-change: transform, opacity;
       backface-visibility: hidden;
+      opacity: 1;
     }
 
     .lightbox.active .lightbox-content {
@@ -346,15 +501,26 @@
   </style>
 
   <script>
-    // Add error handling for image loading
-    document.querySelectorAll('img').forEach(img => {
-      img.addEventListener('error', function() {
-        this.src = 'assets/placeholder.png';
-        this.alt = 'Image not available';
+    // Initialize when DOM is ready
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add click handlers to gallery items
+      document.querySelectorAll('.gallery-item').forEach(item => {
+        item.addEventListener('click', function() {
+          const img = this.querySelector('img');
+          openLightbox(img);
+        });
+      });
+
+      // Add error handling for image loading
+      document.querySelectorAll('img').forEach(img => {
+        img.addEventListener('error', function() {
+          this.src = 'assets/placeholder.png';
+          this.alt = 'Image not available';
+        });
       });
     });
 
-    // Existing lightbox code with error handling
+    // Global variables
     let currentImageIndex = 0;
     const galleryImages = document.querySelectorAll('.gallery-item img');
     const lightbox = document.getElementById('lightbox');
@@ -364,28 +530,36 @@
       if (!img || !lightbox || !lightboxImg) return;
       
       try {
+        // Get the full-size image URL from data-src
+        const fullSizeSrc = img.dataset.src;
+        
+        // Show lightbox and add loading state
         lightbox.style.display = 'flex';
         lightboxImg.classList.add('loading');
         
+        // Preload the full-size image
         const tempImage = new Image();
         tempImage.onload = () => {
-          requestAnimationFrame(() => {
-            lightbox.classList.add('active');
-            lightboxImg.classList.remove('loading');
-          });
-        };
-        tempImage.onerror = () => {
-          console.error('Error loading image:', img.src);
+          lightboxImg.src = fullSizeSrc;
+          lightboxImg.alt = img.alt;
           lightboxImg.classList.remove('loading');
+          lightbox.classList.add('active');
         };
-        tempImage.src = img.src;
         
-        lightboxImg.src = img.src;
-        lightboxImg.alt = img.alt;
+        tempImage.onerror = () => {
+          console.error('Error loading image:', fullSizeSrc);
+          lightboxImg.src = img.src; // Fallback to current src
+          lightboxImg.classList.remove('loading');
+          lightbox.classList.add('active');
+        };
         
+        tempImage.src = fullSizeSrc;
+        
+        // Update current index and navigation
         currentImageIndex = Array.from(galleryImages).indexOf(img);
         updateNavigationButtons();
         
+        // Prevent body scrolling
         document.body.style.overflow = 'hidden';
       } catch (error) {
         console.error('Error opening lightbox:', error);
@@ -400,9 +574,8 @@
         
         setTimeout(() => {
           lightbox.style.display = 'none';
+          document.body.style.overflow = '';
         }, 500);
-        
-        document.body.style.overflow = '';
       } catch (error) {
         console.error('Error closing lightbox:', error);
       }
@@ -414,30 +587,38 @@
       try {
         event.stopPropagation();
         
-        lightboxImg.style.opacity = '0';
-        lightboxImg.style.transform = `scale(${direction === 1 ? 0.9 : 1.1})`;
+        // Calculate new index
+        currentImageIndex = (currentImageIndex + direction + galleryImages.length) % galleryImages.length;
+        const newImage = galleryImages[currentImageIndex];
         
-        setTimeout(() => {
-          currentImageIndex = (currentImageIndex + direction + galleryImages.length) % galleryImages.length;
-          const newImage = galleryImages[currentImageIndex];
+        if (newImage && lightboxImg) {
+          // Add transition effect
+          lightboxImg.style.opacity = '0';
+          lightboxImg.style.transform = `scale(${direction === 1 ? 0.9 : 1.1})`;
           
-          if (newImage && lightboxImg) {
-            // Preload next image
-            const tempImage = new Image();
-            tempImage.onload = () => {
-              lightboxImg.src = newImage.src;
+          // Preload next image
+          const tempImage = new Image();
+          const fullSizeSrc = newImage.dataset.src;
+          
+          tempImage.onload = () => {
+            // Wait for the fade out transition
+            setTimeout(() => {
+              lightboxImg.src = fullSizeSrc;
               lightboxImg.alt = newImage.alt;
               
-              requestAnimationFrame(() => {
-                lightboxImg.style.opacity = '1';
-                lightboxImg.style.transform = 'scale(1)';
-              });
+              // Force a reflow
+              lightboxImg.offsetHeight;
+              
+              // Fade in with scale
+              lightboxImg.style.opacity = '1';
+              lightboxImg.style.transform = 'scale(1)';
               
               updateNavigationButtons();
-            };
-            tempImage.src = newImage.src;
-          }
-        }, 300);
+            }, 300); // Match the CSS transition duration
+          };
+          
+          tempImage.src = fullSizeSrc;
+        }
       } catch (error) {
         console.error('Error navigating images:', error);
       }
@@ -453,7 +634,7 @@
       }
     }
 
-    // Close lightbox when pressing Escape key
+    // Keyboard navigation
     document.addEventListener('keydown', function(event) {
       if (event.key === 'Escape') {
         closeLightbox();
